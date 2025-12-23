@@ -1,0 +1,1 @@
+from .sppedtest import parser, SpeedTestResult
