@@ -1,1 +1,1 @@
-from .sppedtest import parser, SpeedTestResult
+from .speedtest import SpeedTestResult

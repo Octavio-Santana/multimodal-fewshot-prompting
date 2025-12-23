@@ -1,0 +1,4 @@
+from langchain_core.output_parsers import JsonOutputParser
+from multimodal_fewshot_prompting.schemas import SpeedTestResult
+
+speedtest_parser = JsonOutputParser(pydantic_object=SpeedTestResult)
