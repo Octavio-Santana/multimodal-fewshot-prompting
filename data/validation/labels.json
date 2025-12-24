@@ -22,5 +22,11 @@
     "download": 209,
     "upload": 293,
     "ping": 42
+  },
+  {
+    "image": "vivo_validation_01.png",
+    "download": 492,
+    "upload": 114,
+    "ping": 70.0
   }
 ]
