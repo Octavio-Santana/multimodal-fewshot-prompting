@@ -1,0 +1,26 @@
+[
+  {
+    "image": "openspeedtest_validation_01.png",
+    "download": 644.05,
+    "upload": 51.80,
+    "ping": 44.0
+  },
+  {
+    "image": "speedtest_validation_01.png",
+    "download": 495.73,
+    "upload": 198.07,
+    "ping": 3.0
+  },
+  {
+    "image": "minhaconexao_validation_01.png",
+    "download": 643.8,
+    "upload": 254.9,
+    "ping": 7.0
+  },
+  {
+    "image": "simet_validation_01.png",
+    "download": 209,
+    "upload": 293,
+    "ping": 42
+  }
+]

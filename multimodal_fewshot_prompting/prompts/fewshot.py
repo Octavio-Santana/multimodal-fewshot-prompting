@@ -12,6 +12,7 @@ from PIL import Image
 # Diretório padrão de imagens few-shot
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 FEWSHOT_DIR = PROJECT_ROOT / "data" / "fewshot"
+_FEWSHOT_CACHE = None
 
 def _load_fewshot_example(
     image_path: Path,
@@ -63,6 +64,14 @@ def build_few_shot_examples() -> List[HumanMessage]:
 
     return examples
 
+
+def get_fewshot_examples():
+    global _FEWSHOT_CACHE
+    if _FEWSHOT_CACHE is None:
+        _FEWSHOT_CACHE = build_few_shot_examples()
+    return _FEWSHOT_CACHE
+
+
 def build_few_shot_prompt(image_b64: str) -> List:
     """
     Constrói o prompt multimodal completo:
@@ -73,7 +82,7 @@ def build_few_shot_prompt(image_b64: str) -> List:
 
     system_message = SystemMessage(content=SYSTEM_PROMPT)
 
-    fewshot_messages = build_few_shot_examples()
+    # fewshot_messages = build_few_shot_examples()
 
     final_human_message = HumanMessage(
         content=[
@@ -90,6 +99,6 @@ def build_few_shot_prompt(image_b64: str) -> List:
 
     return [
         system_message,
-        *fewshot_messages,
+        *get_fewshot_examples(),
         final_human_message,
     ]
